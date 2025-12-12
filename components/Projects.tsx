@@ -11,7 +11,7 @@ export default function Projects() {
 
           {/* Project 1 */}
           <div className="p-5 rounded-xl bg-white/5 backdrop-blur-md border border-purple-500/20 hover:shadow-purple-500/30 hover:shadow-2xl transition-all">
-            <img src="/p1.jpg" className="rounded-lg"className="w-5 h-5" />
+            <img src="/p1.jpg" className="rounded-lg w-5 h-5" />
             <h3 className="text-[#d8b4fe] font-semibold text-2xl drop-shadow-[0_0_8px_rgba(216,180,254,0.8)]">AI-Powered-Crop-Recommendation</h3>
             <p className="mt-2 text-gray-300">An intelligent machine-learning-based web application that analyzes environmental and soil data to suggest the most suitable crops to grow. The system considers factors such as soil nutrients, rainfall, temperature, and other conditions to make data-driven crop recommendations, helping farmers make informed decisions and optimize agricultural productivity.</p>
             <a
@@ -28,7 +28,7 @@ export default function Projects() {
 
           {/* Project 2 */}
           <div className="p-5 rounded-xl bg-white/5 backdrop-blur-md border border-purple-500/20 hover:shadow-purple-500/30 hover:shadow-2xl transition-all">
-            <img src="/p2.webp" className="rounded-lg" className="w-5 h-5"/>
+            <img src="/p2.webp" className="rounded-lg w-5 h-5"/>
             <h3 className="text-[#d8b4fe] font-semibold text-2xl drop-shadow-[0_0_8px_rgba(216,180,254,0.8)]">Leaf Stress Detection</h3>
             <p className="mt-2 text-gray-300">A machine-learning-based system that analyzes images of plant leaves to detect signs of stress caused by disease, nutrient deficiency, or environmental conditions. By using trained models to identify patterns in leaf imagery, the tool helps farmers monitor crop health early and take proactive measures to support sustainable and productive farming practices.</p>
             <a
