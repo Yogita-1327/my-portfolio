@@ -21,11 +21,14 @@ export default function AnimatedParticles() {
 
     // Particle array
     const particles: any[] = [];
-    const particleCount = Math.min(80, Math.floor((canvas.width * canvas.height) / 20000));
+    const particleCount = Math.min(
+      80,
+      Math.floor((canvas.width * canvas.height) / 20000)
+    );
 
     class Particle {
-      x: number;
-      y: number;
+      x: number = 0;
+      y: number = 0;
       vx: number;
       vy: number;
       size: number;
@@ -33,29 +36,34 @@ export default function AnimatedParticles() {
       color: string;
 
       constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.vx = (Math.random() - 0.5) * 0.25; // slow
-        this.vy = (Math.random() - 0.5) * 0.25; // slow
+        const cw = canvas?.width ?? 0;
+        const ch = canvas?.height ?? 0;
+
+        this.x = Math.random() * cw;
+        this.y = Math.random() * ch;
+
+        this.vx = (Math.random() - 0.5) * 0.25;
+        this.vy = (Math.random() - 0.5) * 0.25;
         this.size = Math.random() * 1.8 + 0.4;
-        this.opacity = Math.random() * 0.25 + 0.05; // very subtle
-        this.color = Math.random() > 0.5 ? "#c084fc" : "#a78bfa"; // purple hues
+        this.opacity = Math.random() * 0.25 + 0.05;
+        this.color = Math.random() > 0.5 ? "#c084fc" : "#a78bfa";
       }
 
       update() {
         this.x += this.vx;
         this.y += this.vy;
 
-        // Wrap around edges
-        if (this.x < -10) this.x = canvas.width + 10;
-        if (this.x > canvas.width + 10) this.x = -10;
-        if (this.y < -10) this.y = canvas.height + 10;
-        if (this.y > canvas.height + 10) this.y = -10;
+        const cw = canvas?.width ?? 0;
+        const ch = canvas?.height ?? 0;
 
-        // Slight opacity pulse
+        // Wrap around
+        if (this.x < -10) this.x = cw + 10;
+        if (this.x > cw + 10) this.x = -10;
+        if (this.y < -10) this.y = ch + 10;
+        if (this.y > ch + 10) this.y = -10;
+
         this.opacity += (Math.random() - 0.5) * 0.02;
-        if (this.opacity > 0.35) this.opacity = 0.35;
-        if (this.opacity < 0.02) this.opacity = 0.02;
+        this.opacity = Math.min(0.35, Math.max(0.02, this.opacity));
       }
 
       draw(ctx: CanvasRenderingContext2D) {
@@ -73,9 +81,9 @@ export default function AnimatedParticles() {
       particles.push(new Particle());
     }
 
-    // Draw connecting lines between nearby particles (subtle)
     const drawConnections = () => {
       const maxDistance = 120;
+
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
@@ -83,7 +91,9 @@ export default function AnimatedParticles() {
           const distance = Math.sqrt(dx * dx + dy * dy);
 
           if (distance < maxDistance) {
-            ctx.strokeStyle = `rgba(192,132,252, ${0.12 * (1 - distance / maxDistance)})`;
+            ctx.strokeStyle = `rgba(192,132,252, ${
+              0.12 * (1 - distance / maxDistance)
+            })`;
             ctx.lineWidth = 0.4;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
@@ -94,17 +104,15 @@ export default function AnimatedParticles() {
       }
     };
 
-    // Animation loop
     let raf = 0;
 
     const animate = () => {
-      // very subtle background clear to create trailing effect
-      ctx.fillStyle = "rgba(0,0,0,0.1)"; // slightly darker so particles are subtle
+      ctx.fillStyle = "rgba(0,0,0,0.1)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      particles.forEach((particle) => {
-        particle.update();
-        particle.draw(ctx);
+      particles.forEach((p) => {
+        p.update();
+        p.draw(ctx);
       });
 
       drawConnections();
@@ -113,12 +121,12 @@ export default function AnimatedParticles() {
 
     animate();
 
-    // Handle window resize
     const handleResize = () => {
       setSize();
     };
 
     window.addEventListener("resize", handleResize);
+
     return () => {
       window.removeEventListener("resize", handleResize);
       cancelAnimationFrame(raf);
