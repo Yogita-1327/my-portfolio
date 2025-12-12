@@ -1,11 +1,16 @@
 import "./globals.css";
+import type { ReactNode } from "react";
 
 export const metadata = {
   title: "Yogita I J",
   description: "Portfolio",
 };
 
-export default function RootLayout({ children }) {
+interface RootLayoutProps {
+  children: ReactNode;
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <body>
