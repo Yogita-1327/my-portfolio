@@ -18,3 +18,9 @@ A modern, responsive, and animated personal portfolio website built to showcase 
   - Projects
   - Education
   - Contact
+- 🔗 Direct links to **GitHub** and **LinkedIn**
+- 🚀 Deployed on **Vercel**
+
+---
+
+## 🛠️ Tech Stack
