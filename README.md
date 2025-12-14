@@ -31,3 +31,24 @@ A modern, responsive, and animated personal portfolio website built to showcase 
 - **Deployment:** Vercel
 
 ---
+## 📂 Project Structure
+
+```text
+my-portfolio/
+├── app/
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+│   ├── Hero.tsx
+│   ├── About.tsx
+│   ├── TechStack.tsx
+│   ├── Projects.tsx
+│   ├── Education.tsx
+│   ├── Contact.tsx
+│   ├── AnimatedParticles.tsx
+│   └── Navbar.tsx
+├── public/
+│   └── images & icons
+├── package.json
+└── README.md
