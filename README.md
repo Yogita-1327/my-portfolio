@@ -24,3 +24,10 @@ A modern, responsive, and animated personal portfolio website built to showcase 
 ---
 
 ## 🛠️ Tech Stack
+- **Frontend:** Next.js (App Router), React
+- **Styling:** Tailwind CSS
+- **Animations:** Framer Motion, Canvas API
+- **Language:** TypeScript
+- **Deployment:** Vercel
+
+---
