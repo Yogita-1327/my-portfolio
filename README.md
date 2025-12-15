@@ -31,8 +31,6 @@ A modern, responsive, and animated personal portfolio website built to showcase 
 
 ---
 ## 📂 Project Structure
-
-```text
 my-portfolio/
 ├── app/
 │   ├── globals.css
