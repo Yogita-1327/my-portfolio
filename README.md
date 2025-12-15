@@ -6,9 +6,7 @@ A modern, responsive, and animated personal portfolio website built to showcase 
 
 ---
 
-## ✨ Features
-
-- 🎨 **Modern UI/UX** with a purple gradient theme
+## ✨ Features- 🎨 **Modern UI/UX** with a purple gradient theme
 - 🌠 **Animated background** using Canvas
 - ⚛️ **Component-based architecture** with Next.js App Router
 - 📱 Fully **responsive design**
