@@ -30,6 +30,7 @@ A modern, responsive, and animated personal portfolio website built to showcase 
 - **Deployment:** Vercel
 
 ---
+
 ## 📂 Project Structure
 my-portfolio/
 ├── app/
