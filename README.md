@@ -5,7 +5,6 @@ A modern, responsive, and animated personal portfolio website built to showcase 
 👉 https://yogita-i-j-portfolio.vercel.app/
 
 ---
-
 ## ✨ Features
 - 🎨 **Modern UI/UX** with a purple gradient theme
 - 🌠 **Animated background** using Canvas
